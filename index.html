@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS. Домашнее задание 1</title>
+</head>
+<body>
+    <script>
+        // Задача 1
+        var myNumber = +prompt('Задача 1. Введите число: ');
+
+        if(myNumber > 1 && myNumber < 10 && myNumber%2 == 0) {
+            alert('true');
+        }
+        else {
+            alert('false');
+        }
+        // Задача 2
+        var myNum1 = +prompt('Задача 2.\nВведите начало диапазона: ');
+        var myNum2 = +prompt('Введите конец диапазона: ')
+        var grade = 2;
+
+        if(myNum2 < myNum1) {
+            var temp = myNum2;
+            myNum2 = myNum1;
+            myNum1 = temp;
+        }
+
+        for(var i=myNum1; i<myNum2; i++) {
+            for(var j=0; j < 20; j++) {
+                if(i === grade ** j)
+                    alert(i);
+            }
+        }
+        // Задача 3
+        var num1 = +prompt('Задача 3.\nВведите число: ');
+        var sum = num1;
+
+        while(true) {
+            if(confirm('Ввести ещё число?')) {
+                var num2 = +prompt('Введите число: ');
+                sum += num2;
+            }
+            else {
+                alert(`Сумма всех введенных чисел = ${sum}`);
+                break;
+            }
+
+        }
+        // Задача 4
+        var string = prompt('Задача 4.\nВведите строку:');
+        var spaces = string.match(/\s/g);
+        var number1 = string.match(/[1]/g);
+        var symbols = spaces + number1;
+
+        if(spaces != null && number1 != null) {
+            string = string.replace(/\s + /g, '').replace(/[1]/g, '');
+            alert(string);
+        }
+        else {
+            alert('Отсутсвуют пробелы и 1-цы');
+        }
+        // Задача 5
+        var counter = 0;
+        
+        do {
+            var random = Math.floor(Math.random()*(20-1)+1);
+            if(random % 3 != 0) {
+                console.log(random);
+                counter++
+            }
+        }
+        while (counter < 10);
+    </script>
+</body>
+</html>
